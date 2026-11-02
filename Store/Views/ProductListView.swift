@@ -17,7 +17,6 @@ struct ProductListView: View {
                             .foregroundStyle(.secondary)
                     }
                     Spacer()
-                    // Zmiana stanu koszyka bezpośrednio z listy.
                     Button {
                         cart.add(product)
                     } label: {

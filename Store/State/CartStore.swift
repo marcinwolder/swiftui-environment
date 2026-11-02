@@ -1,20 +1,10 @@
 import Foundation
 import Observation
 
-/// Jedyne źródło prawdy o koszyku.
-///
-/// Właścicielem instancji jest korzeń aplikacji (`StoreApp`), ale żaden widok
-/// nie dostaje jej przez parametry. Każdy widok bierze ją sam przez
-/// `@Environment(CartStore.self)`. To odpowiednik `Context.Provider` z Reacta.
-///
-/// `@Observable` śledzi, które właściwości widok czyta w `body`.
-/// Widok odświeża się tylko wtedy, gdy zmieni się właściwość, którą czyta.
 @Observable
 final class CartStore {
-    /// Tylko store zmienia tablicę. Widoki wywołują metody poniżej.
     private(set) var items: [CartItem] = []
 
-    /// Liczba sztuk we wszystkich pozycjach. Czyta ją badge w pasku nawigacji.
     var count: Int { items.reduce(0) { $0 + $1.quantity } }
 
     var total: Decimal { items.reduce(0) { $0 + $1.subtotal } }

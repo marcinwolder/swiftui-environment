@@ -22,8 +22,8 @@ struct CartView: View {
                             Spacer()
                             Stepper(
                                 "\(item.quantity)",
-                                onIncrement: { cart.add(item.product) },
-                                onDecrement: { cart.decrement(item.product) }
+                                onIncrement: { withAnimation { cart.add(item.product) } },
+                                onDecrement: { withAnimation { cart.decrement(item.product) } }
                             )
                             .fixedSize()
                         }
@@ -45,7 +45,7 @@ struct CartView: View {
         .toolbar {
             if !cart.items.isEmpty {
                 ToolbarItem(placement: .primaryAction) {
-                    Button("Wyczyść", role: .destructive) { cart.clear() }
+                    Button("Wyczyść", role: .destructive) { withAnimation { cart.clear() } }
                 }
             }
         }

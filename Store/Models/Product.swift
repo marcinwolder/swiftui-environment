@@ -3,7 +3,7 @@ import Foundation
 struct Product: Identifiable, Hashable {
     let id: Int
     let name: String
-    let symbol: String      // SF Symbol zamiast zdjęcia
+    let symbol: String
     let price: Decimal
     let details: String
 

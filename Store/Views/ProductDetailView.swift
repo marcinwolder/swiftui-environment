@@ -1,7 +1,5 @@
 import SwiftUI
 
-/// Ekran szczegółów edytuje stan koszyka, choć nie jest jego właścicielem
-/// ani potomkiem `CartView`.
 struct ProductDetailView: View {
     let product: Product
     @Environment(CartStore.self) private var cart

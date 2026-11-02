@@ -20,7 +20,6 @@ struct RootView: View {
     }
 }
 
-/// Znacznik trasy do ekranu koszyka.
 struct CartRoute: Hashable {}
 
 #Preview {
